@@ -8,15 +8,11 @@ enum Instruction {
     Forward(u32),
 }
 
-enum ParseError {
-    InvalidFormat,
-}
-
 fn read_input(filename: &str) -> Vec<Instruction> {
     let mut moves = Vec::new();
 
     let file = File::open(filename).expect("Cannot open file");
-    let mut reader = BufReader::new(file);
+    let reader = BufReader::new(file);
 
     for line in reader.lines() {
         if let Ok(line) = line {
@@ -72,7 +68,7 @@ fn interpret2(instructions: &Vec<Instruction>, depth: u32, position: u32) -> (u3
     let mut aim = 0;
 
     for instruction in instructions {
-        println!("{:?} {} {} {}", instruction, depth, position, aim);
+        // println!("{:?} {} {} {}", instruction, depth, position, aim);
         match instruction {
             Instruction::Forward(x) => {
                 position += x;

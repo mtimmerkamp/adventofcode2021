@@ -6,7 +6,7 @@ fn read_input(filename: &str) -> (Vec<u32>, usize) {
     let mut input = Vec::new();
 
     let file = File::open(filename).expect("Cannot open file");
-    let mut reader = BufReader::new(file);
+    let reader = BufReader::new(file);
     let mut bits = 0;
 
     for line in reader.lines() {
