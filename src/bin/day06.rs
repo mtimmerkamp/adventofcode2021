@@ -1,6 +1,4 @@
-use std::collections::HashMap;
 use std::fs::File;
-use std::hash::Hash;
 use std::io::{BufRead, BufReader};
 
 fn read_input(filename: &str) -> Vec<u32> {
@@ -23,6 +21,7 @@ fn read_input(filename: &str) -> Vec<u32> {
     input
 }
 
+#[allow(dead_code)]
 fn simulate_fish_population_naive(timers: &Vec<u32>, days: u32) -> u32 {
     let reproduction_time: u32 = 7;
     let infertility_time: u32 = 2;

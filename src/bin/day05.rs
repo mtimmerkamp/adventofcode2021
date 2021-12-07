@@ -127,6 +127,7 @@ fn read_input(filename: &str) -> Vec<Line> {
     input
 }
 
+#[allow(dead_code)]
 fn print_map(map: &HashMap<(i32, i32), u32>) {
     let minx = map.iter().map(|(&(x, _), _)| x).min().unwrap_or(0);
     let miny = map.iter().map(|(&(_, y), _)| y).min().unwrap_or(0);
