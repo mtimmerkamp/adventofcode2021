@@ -23,6 +23,7 @@ fn read_input(filename: &str) -> Map {
     input
 }
 
+#[allow(dead_code)]
 fn format_map(map: &Map) -> String {
     let mut s = String::new();
     for row in map {

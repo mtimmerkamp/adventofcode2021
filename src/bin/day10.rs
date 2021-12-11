@@ -41,10 +41,6 @@ impl Bracket {
         }
     }
 
-    fn closes(&self, other: &Bracket) -> bool {
-        other.closed_by(self)
-    }
-
     const fn closing(&self) -> bool {
         match self {
             Bracket::ParenClose
@@ -53,10 +49,6 @@ impl Bracket {
             | Bracket::AngledClose => true,
             _ => false,
         }
-    }
-
-    const fn opening(&self) -> bool {
-        !self.closing()
     }
 }
 
