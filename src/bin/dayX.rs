@@ -6,7 +6,7 @@ fn read_input(filename: &str) -> Vec<u32> {
     let mut input = Vec::new();
 
     let file = File::open(filename).expect("Cannot open file");
-    let mut reader = BufReader::new(file);
+    let reader = BufReader::new(file);
 
     for line in reader.lines() {
         if let Ok(line) = line {
@@ -17,14 +17,20 @@ fn read_input(filename: &str) -> Vec<u32> {
     input
 }
 
-fn part1() {
+fn part1(input: &Vec<u32>) -> u32 {
+    0
 }
 
-fn part2() {
+fn part2(input: &Vec<u32>) -> u32 {
+    0
 }
 
 fn main() {
-    // let input = read_input("inputs/02.txt");
+    // let input = read_input("inputs/X.txt");
+    let input = read_input("test_inputs/X.txt");
+
+    println!("Part 1: {}", part1(&input));
+    println!("Part 2: {}", part2(&input));
 }
 
 
@@ -34,9 +40,13 @@ mod testsX {
 
     #[test]
     fn test01() {
-        // let instructions = read_input("test_inputs/02_01.txt");
-        // let product = part1(&instructions);
+        let input = read_input("test_inputs/X.txt");
+        assert_eq!(part1(&input), 150);
+    }
 
-        // assert_eq!(product, 150);
+    #[test]
+    fn test02() {
+        let input = read_input("test_inputs/X.txt");
+        assert_eq!(part2(&input), 150);
     }
 }
