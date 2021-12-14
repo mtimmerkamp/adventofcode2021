@@ -90,6 +90,7 @@ fn read_input(filename: &str) -> CaveSystem {
     system
 }
 
+#[allow(dead_code)]
 fn format_path(path: &Vec<Rc<Cave>>) -> String {
     let mut s = String::new();
     for (i, cave) in path.iter().enumerate() {
